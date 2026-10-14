@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-deco: 'Cinzel', 'Cormorant Garamond', serif;
+    --font-serif-vintage: 'Cormorant Garamond', Georgia, serif;
+    --font-sans-clean: 'Montserrat', -apple-system, sans-serif;
+  }
+}
+
+.font-deco {
+  font-family: var(--font-deco);
+}
+
+.font-vintage {
+  font-family: var(--font-serif-vintage);
+}
+
+.font-sans-clean {
+  font-family: var(--font-sans-clean);
+}
+
+/* Vintage 1920s cinema film projector & vignette effects */
+@keyframes film-grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-2%, -2%); }
+  20% { transform: translate(2%, 1%); }
+  30% { transform: translate(-1%, 2%); }
+  40% { transform: translate(1%, -1%); }
+  50% { transform: translate(-2%, 1%); }
+  60% { transform: translate(2%, 2%); }
+  70% { transform: translate(1%, -2%); }
+  80% { transform: translate(-1%, -1%); }
+  90% { transform: translate(2%, -2%); }
+}
+
+@keyframes film-flicker {
+  0% { opacity: 0.96; }
+  25% { opacity: 1; }
+  50% { opacity: 0.93; }
+  75% { opacity: 0.98; }
+  100% { opacity: 0.95; }
+}
+
+.animate-film-flicker {
+  animation: film-flicker 0.15s infinite;
+}
+
+.film-vignette {
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.85), inset 0 0 40px rgba(0, 0, 0, 0.95);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fce881 0%, #d4af37 50%, #aa771c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.silver-gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #c4c9d4 50%, #8892a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.art-deco-border {
+  border: 2px solid #d4af37;
+  position: relative;
+}
+
+.art-deco-border::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  pointer-events: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #18151d;
+}
+::-webkit-scrollbar-thumb {
+  background: #3c3444;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
